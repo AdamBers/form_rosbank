@@ -1,4 +1,42 @@
 const errorMessage = document.getElementById('error-message')
+const error_2 = document.getElementById('error_2')
+const error_3 = document.getElementById('error_3')
+const form = document.getElementById('myForm')
+const comment_div = document.getElementById('comment_div')
+var currentGrade = ''
+var comment = document.getElementById('comment')
+var commentValue = ''
+
+let checked = document.querySelectorAll('input[type=checkbox]')
+
+checked.forEach(function (item) {
+    item.checked === false
+    item.addEventListener('click', function () {
+        error_2.classList.add('hidden')
+    })
+})
+
+form.onsubmit = function (e) {
+    // console.log(comment.value.length)
+    // e.preventDefault()
+    if (currentGrade === '') {
+        console.log(currentGrade)
+        errorMessage.classList.remove('hidden')
+        e.preventDefault()
+    }
+    if (currentGrade !== '' && comment.value.length === 0) {
+        error_3.classList.remove("hidden")
+        e.preventDefault()
+    }
+
+    let checked = document.querySelectorAll('input[type=checkbox]:checked')
+    if (checked.length === 0) {
+        error_2.classList.remove('hidden')
+        e.preventDefault()
+    }
+}
+
+
 
 function handleStar(event) {
     const label1 = document.getElementById('star1label')
@@ -10,7 +48,9 @@ function handleStar(event) {
     const question2 = document.getElementById('question2')
     const question3 = document.getElementById('question3')
     const errorMessage = document.getElementById('error-message')
+    comment_div.classList.remove('hidden')
 
+    currentGrade = event.target.id
     errorMessage.classList.add('hidden')
 
 
@@ -67,16 +107,8 @@ function handleStar(event) {
 }
 
 
-window.addEventListener("load", () => {
+function handleComment(e) {
+    commentValue = e.target.value
+    error_3.classList.add("hidden")
+}
 
-    const selected = document.querySelectorAll('option:checked')
-    const form = document.getElementById('myForm')
-    form.onsubmit = function (e) {
-        console.log(selected.length)
-        e.preventDefault()
-        if (selected.length === 0) {
-            errorMessage.classList.remove('hidden')
-
-        }
-    }
-});
