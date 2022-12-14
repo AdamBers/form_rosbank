@@ -231,13 +231,12 @@ textarea::placeholder {
     line-height: 14px;
     position: absolute;
     margin-bottom: 30px;
-
 }
 
 form {
     display: flex;
     /* height: 100vh; */
-    height: calc(100% - 120px);
+    height: calc(100% - 140px);
     flex-direction: column;
     justify-content: space-between;
 }
