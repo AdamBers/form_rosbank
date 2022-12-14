@@ -115,3 +115,7 @@ function handleComment(e) {
     error_3.classList.add("hidden")
 }
 
+function auto_grow(element) {
+    element.style.height = "42px";
+    element.style.height = (element.scrollHeight)+"px";
+}
