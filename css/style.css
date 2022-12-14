@@ -124,6 +124,7 @@ input[type=text], textarea {
     border-radius: 5px;
     padding: 5px 20px;
     resize: none;
+    overflow: hidden
 }
 
 .hidden {
