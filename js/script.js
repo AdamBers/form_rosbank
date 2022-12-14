@@ -6,6 +6,7 @@ const comment_div = document.getElementById('comment_div')
 var currentGrade = ''
 var comment = document.getElementById('comment')
 var commentValue = ''
+const send = document.getElementById('send')
 
 let checked = document.querySelectorAll('input[type=checkbox]')
 
@@ -49,6 +50,8 @@ function handleStar(event) {
     const question3 = document.getElementById('question3')
     const errorMessage = document.getElementById('error-message')
     comment_div.classList.remove('hidden')
+    send.classList.remove('hidden')
+
 
     currentGrade = event.target.id
     errorMessage.classList.add('hidden')
