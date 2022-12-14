@@ -23,7 +23,7 @@
             <p>Оцените работу сотрудника контакт-центра</p>
         </div>
 
-        <form action="end.html">
+        <form action="end.html" id='myForm'>
             <div class="rating" onchange="handleStar(event)">
                 <input type="radio" name="star" id="star1"><label for="star1" class="fa fa-star"
                     id="star1label"></label>
@@ -35,6 +35,9 @@
                     id="star4label"></label>
                 <input type="radio" name="star" id="star5"><label for="star5" class="fa fa-star"
                     id="star5label"></label>
+            </div>
+            <div class="error-message hidden" id='error-message'>
+                <p>Пожалуйста, выберите оценку от 1 до 5</p>
             </div>
 
 
@@ -89,6 +92,11 @@
                         <input type="text" name="comment" id="comment" placeholder="Оставьте комментарий...">
                     </div>
                 </div>
+            </div>
+
+
+            <div class="error-message_2 hidden">
+                <p>Пожалуйста, выберите один из вариантов ответа</p>
             </div>
 
             <input type="submit" name="grade" id="" value="Оценить">

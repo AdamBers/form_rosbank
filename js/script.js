@@ -1,3 +1,5 @@
+const errorMessage = document.getElementById('error-message')
+
 function handleStar(event) {
     const label1 = document.getElementById('star1label')
     const label2 = document.getElementById('star2label')
@@ -7,6 +9,10 @@ function handleStar(event) {
     const question1 = document.getElementById('question1')
     const question2 = document.getElementById('question2')
     const question3 = document.getElementById('question3')
+    const errorMessage = document.getElementById('error-message')
+
+    errorMessage.classList.add('hidden')
+
 
     label1.style.color = '#E5E7EA'
     label2.style.color = '#E5E7EA'
@@ -59,3 +65,18 @@ function handleStar(event) {
         question3.classList.remove('hidden')
     }
 }
+
+
+window.addEventListener("load", () => {
+
+    const selected = document.querySelectorAll('option:checked')
+    const form = document.getElementById('myForm')
+    form.onsubmit = function (e) {
+        console.log(selected.length)
+        e.preventDefault()
+        if (selected.length === 0) {
+            errorMessage.classList.remove('hidden')
+
+        }
+    }
+});
