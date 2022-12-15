@@ -10,6 +10,10 @@ const send = document.getElementById('send')
 
 let checked = document.querySelectorAll('input[type=checkbox]')
 
+document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+});
+
 checked.forEach(function (item) {
     item.checked === false
     item.addEventListener('click', function () {

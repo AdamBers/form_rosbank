@@ -4,7 +4,19 @@
     box-sizing: border-box;
     background-color: #fff;
     user-select: none;
-    
+    /* Text is never inflated */
+    text-size-adjust: none;
+
+    /* Text may be inflated */
+    text-size-adjust: auto;
+
+    /* Text may be inflated in this exact proportion */
+    text-size-adjust: 80%;
+
+    /* Global values */
+    text-size-adjust: inherit;
+    text-size-adjust: initial;
+    text-size-adjust: unset;
     /*  */
 }
 
