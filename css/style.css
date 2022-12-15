@@ -14,9 +14,6 @@ body {
     border: 1px solid rgba(68, 68, 68, 0.1);
     min-height: calc(100vh - 2px);
     font-family: "Source Sans Pro", sans-serif;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-
 }
 
 .main-container {
